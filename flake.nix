@@ -6,8 +6,8 @@
     # companion.url = "github:noblepayne/bitfocus-companion-flake";
     # companion.inputs.nixpkgs.follows = "nixpkgs";
 
-    inputs.disko.url = "github:nix-community/disko/latest";
-    inputs.disko.inputs.nixpkgs.follows = "nixpkgs";
+    disko.url = "github:nix-community/disko/latest";
+    disko.inputs.nixpkgs.follows = "nixpkgs";
 
     prettyswitch.url = "github:noblepayne/pretty-switch";
     prettyswitch.inputs.nixpkgs.follows = "nixpkgs";
