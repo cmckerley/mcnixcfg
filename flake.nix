@@ -6,6 +6,9 @@
     # companion.url = "github:noblepayne/bitfocus-companion-flake";
     # companion.inputs.nixpkgs.follows = "nixpkgs";
 
+    inputs.disko.url = "github:nix-community/disko/latest";
+    inputs.disko.inputs.nixpkgs.follows = "nixpkgs";
+
     prettyswitch.url = "github:noblepayne/pretty-switch";
     prettyswitch.inputs.nixpkgs.follows = "nixpkgs";
     
@@ -13,16 +16,28 @@
     hyprland.inputs.nixpkgs.follows = "nixpkgs";
   };
 
-  outputs = { self, nixpkgs, prettyswitch, hyprland, ... }: {
+  outputs = { self, nixpkgs, prettyswitch, hyprland, disko, ... }: {
     # Formatter (optional)
     formatter.x86_64-linux = nixpkgs.legacyPackages.x86_64-linux.alejandra;
 
     nixosConfigurations = {
-      rvbee = nixpkgs.lib.nixosSystem {
+      nix-vm = nixpkgs.lib.nixosSystem {
         system = "x86_64-linux";
         modules = [
           ./hosts/nix-vm/system.nix
           prettyswitch.nixosModules.default
+          disko.nixosModules.disko
+        ];
+        specialArgs = {
+          inherit hyprland;
+        };
+      };
+      nix-ltp = nixpkgs.lib.nixosSystem {
+        system = "x86_64-linux";
+        modules = [
+          ./hosts/nix-ltp/system.nix
+          prettyswitch.nixosModules.default
+          disko.nixosModules.disko
         ];
         specialArgs = {
           inherit hyprland;

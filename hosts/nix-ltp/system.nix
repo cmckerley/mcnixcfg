@@ -263,7 +263,7 @@ let
     drawing
   ];
   # Centralized wallpaper path used by hyprpaper and hyprlock
-  wallpaperPath = "/home/cmckerley/build/config/hosts/nix-vm/aesthetic_8_bit_art-wallpaper-3840x2160.jpg";
+  wallpaperPath = "/home/cmckerley/build/config/hosts/nix-ltp/aesthetic_8_bit_art-wallpaper-3840x2160.jpg";
 
   # Script to import GITHUB_TOKEN into systemd --user environment
   setGithubTokenScript = pkgs.writeShellScript "set-github-token" ''
@@ -315,7 +315,7 @@ in
   # Power management
   powerManagement = {
     enable = true;
-    cpuFreqGovernor = "performance";
+    cpuFreqGovernor = "balanced";
   };
 
   # OOM configuration
@@ -355,7 +355,7 @@ in
 
   # Networking
   networking = {
-    hostName = "nix-vm";
+    hostName = "nix-ltp";
     networkmanager.enable = true;
     firewall = {
       enable = false;
