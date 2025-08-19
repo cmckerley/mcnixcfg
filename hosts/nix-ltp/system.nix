@@ -291,6 +291,11 @@ in
     kernelPackages = pkgs.linuxPackages_zen;
   };
 
+  # Optimus Support
+  services.xserver.videoDrivers = [ "modesetting" "nvidia" ];
+  hardware.nvidia.package = config.boot.kernelPackages.nvidiaPackages.stable; ```
+
+
   # System performance and maintenance
   services.btrfs.autoScrub.enable = true;
   nix.settings.auto-optimise-store = true;
@@ -509,7 +514,7 @@ in
     mkdir -p /home/cmckerley/.config/waybar/scripts
     cp ${./scripts/waybar-dunst.sh} /home/cmckerley/.config/waybar/scripts/waybar-dunst.sh
     cp ${./scripts/waybar-public-ip.sh} /home/cmckerley/.config/waybar/scripts/waybar-public-ip.sh
-    cp ${./scripts/waybar-amd-gpu.sh} /home/cmckerley/.config/waybar/scripts/waybar-amd-gpu.sh
+    cp ${./scripts/waybar-nvidia-gpu.sh} /home/cmckerley/.config/waybar/scripts/waybar-nvidia-gpu.sh
     cp ${./scripts/waybar-weather.sh} /home/cmckerley/.config/waybar/scripts/waybar-weather.sh
     cp ${./scripts/waybar-brightness.sh} /home/cmckerley/.config/waybar/scripts/waybar-brightness.sh
     cp ${./scripts/waybar-btc.py} /home/cmckerley/.config/waybar/scripts/waybar-btc.py

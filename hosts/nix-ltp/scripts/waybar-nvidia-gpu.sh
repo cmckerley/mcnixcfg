@@ -49,7 +49,7 @@ elif [[ -n "${card_index}" && -r "/sys/kernel/debug/dri/${card_index}/amdgpu_pm_
 fi
 
 text=""
-tooltip="AMD GPU"
+tooltip="NVIDIA GPU"
 
 parts=()
 [[ -n "${util}" ]] && parts+=("${util}%")
@@ -58,7 +58,7 @@ parts=()
 
 if [[ ${#parts[@]} -gt 0 ]]; then
   text="${parts[*]}"
-  tooltip="AMD GPU: ${parts[*]}"
+  tooltip="NVIDIA GPU: ${parts[*]}"
 fi
 
 format_output "${text}" "${tooltip}"

@@ -17,7 +17,7 @@
     "custom/public_ip",
     "cpu",
     "memory",
-    "custom/amd_gpu",
+    "custom/nvidia_gpu",
     "gamemode",
     "custom/weather",
     "tray",
@@ -107,9 +107,9 @@
     "format": "🤖 {percentage}% ",
     "tooltip": false
   },
-  "custom/amd_gpu": {
+  "custom/nvidia_gpu": {
     "return-type": "json",
-    "exec": "~/.config/waybar/scripts/waybar-amd-gpu.sh",
+    "exec": "~/.config/waybar/scripts/waybar-nvidia-gpu.sh",
     "interval": 5,
     "tooltip": true,
     "format": "🎮 {}"
