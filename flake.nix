@@ -21,7 +21,7 @@
       rvbee = nixpkgs.lib.nixosSystem {
         system = "x86_64-linux";
         modules = [
-          ./hosts/rvbee/system.nix
+          ./hosts/nix-vm/system.nix
           prettyswitch.nixosModules.default
         ];
         specialArgs = {
