@@ -279,7 +279,7 @@ in
     hyprland.nixosModules.default
     # Import your hardware configuration
     ./hardware-configuration.nix
-    (import ./disko-config.nix { disks = [ "/dev/vda" ]; })
+    (import ./disko-config.nix { disks = [ "/dev/sda" ]; })
   ];
 
   # Boot configuration

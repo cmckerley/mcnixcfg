@@ -27,6 +27,8 @@
           ./hosts/nix-vm/system.nix
           prettyswitch.nixosModules.default
           disko.nixosModules.disko
+          # Import your disko-config.nix
+          ./hosts/nix-vm/disko-config.nix
         ];
         specialArgs = {
           inherit hyprland;
@@ -38,6 +40,8 @@
           ./hosts/nix-ltp/system.nix
           prettyswitch.nixosModules.default
           disko.nixosModules.disko
+          # Import your disko-config.nix
+          ./hosts/nix-ltp/disko-config.nix
         ];
         specialArgs = {
           inherit hyprland;
