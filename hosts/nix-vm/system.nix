@@ -4,51 +4,51 @@ let
   # Package groups
   devTools = with pkgs; [
     git
-    gcc
-    cmake
-    python3
-    go
-    gh
-    gitui
-    patchelf
-    binutils
-    nixfmt-rfc-style
-    zed-editor
+    #gcc
+    #cmake
+    #python3
+    #go
+    #gh
+    #gitui
+    #patchelf
+    #binutils
+    #nixfmt-rfc-style
+    #zed-editor
     # Additional development tools from Omarchy
-    cargo
-    clang
-    llvm
-    mise
-    imagemagick
-    mariadb
-    postgresql
+    #cargo
+    #clang
+    #llvm
+    #mise
+    #imagemagick
+    #mariadb
+    #postgresql
     github-cli
     lazygit
     kitty
-    lazydocker
+    #lazydocker
   ];
 
   multimedia = with pkgs; [
-    mpv
-    vlc
+    # mpv
+    # vlc
     ffmpeg-full
     # haruna
     # reaper
-    lame
+    # lame
     # carla
-    qjackctl
+    # jackctl
     qpwgraph
     # sonobus
     # krita
-    x32edit
+    # x32edit
     # pwvucontrol
-    easyeffects
+    # easyeffects
     wayfarer
-    obs-studio
-    obs-studio-plugins.obs-pipewire-audio-capture
+    # obs-studio
+    # obs-studio-plugins.obs-pipewire-audio-capture
     # obs-studio-plugins.waveform
     libepoxy
-    audacity
+    # audacity
     # Additional multimedia tools from Omarchy
     ffmpegthumbnailer
     gnome.gvfs
@@ -56,13 +56,13 @@ let
   ];
 
   utilities = with pkgs; [
-    ghostty
-    htop
-    btop
-    neofetch
-    nmap
-    mosh
-    yt-dlp
+    #ghostty
+    #htop
+    #btop
+    #neofetch
+    #nmap
+    #mosh
+    #yt-dlp
     zip
     unzip
     gnupg
@@ -203,18 +203,18 @@ let
     
   ];
 
-  gaming = with pkgs; [
-    # steam - now managed by programs.steam
-    steam-run
-    moonlight-qt
-    sunshine
-    adwaita-icon-theme
-    lutris
-    playonlinux
-    wineWowPackages.staging
-    winetricks
-    vulkan-tools
-  ];
+  #gaming = with pkgs; [
+  #  # steam - now managed by programs.steam
+  #  steam-run
+  #  moonlight-qt
+  #  sunshine
+  #  adwaita-icon-theme
+  #  lutris
+  #  playonlinux
+  #  wineWowPackages.staging
+  #  winetricks
+  #  vulkan-tools
+  #];
 
   # GTK applications (replacing GNOME apps)
   gtkApps = with pkgs; [
@@ -344,16 +344,16 @@ in
     };
 
     # Load GITHUB_TOKEN into the systemd user manager environment from a local secret file
-    user.services.set-github-token = {
-      description = "Set GITHUB_TOKEN in systemd --user environment from ~/.config/secrets/github_token";
-      after = [ "default.target" ];
-      wantedBy = [ "default.target" ];
-      serviceConfig = {
-        Type = "oneshot";
-        RemainAfterExit = true;
-        ExecStart = "${setGithubTokenScript}";
-      };
-    };
+    #user.services.set-github-token = {
+    #  description = "Set GITHUB_TOKEN in systemd --user environment from ~/.config/secrets/github_token";
+    #  after = [ "default.target" ];
+    #  wantedBy = [ "default.target" ];
+    #  serviceConfig = {
+    #    Type = "oneshot";
+    #    RemainAfterExit = true;
+    #    ExecStart = "${setGithubTokenScript}";
+    #  };
+    #};
   };
 
   # Networking
@@ -389,7 +389,7 @@ in
   services = {
     fstrim.enable = true;
     # Ensure brightnessctl udev rules are active
-    udev.packages = [ pkgs.brightnessctl ];
+    #udev.packages = [ pkgs.brightnessctl ];
     udisks2.enable = true;
     gvfs.enable = true;
     tumbler.enable = true;
@@ -421,7 +421,7 @@ in
       wireplumber.enable = true;
     };
     openssh.enable = true;
-    tailscale.enable = true;
+    #tailscale.enable = true;
     netdata.enable = true;
     flatpak.enable = true;
     # Atuin shell history service
@@ -457,16 +457,16 @@ in
   };
 
   # Virtualization
-  virtualisation = {
-    libvirtd.enable = true;
-    docker = {
-      enable = true;
-      autoPrune = {
-        enable = true;
-        dates = "weekly";
-      };
-    };
-  };
+  #virtualisation = {
+  # libvirtd.enable = true;
+  #  docker = {
+  #    enable = true;
+  #    autoPrune = {
+  #      enable = true;
+  #      dates = "weekly";
+  #    };
+  #  };
+  #};
 
   # No man pages
   documentation.man.enable = false;
