@@ -30,7 +30,8 @@
               # name = "root";
               size = "100%";
               priority = 3;
-              content.format = "btrfs";
+              content = {
+                type = "btrfs";
                 subvolumes = {
                       "@" = { };
                       "@/root" = {
@@ -66,4 +67,5 @@
                 };
              };
             };
+};
 }
