@@ -696,6 +696,7 @@ in
 
   # Nix settings
   nix.settings.experimental-features = ["nix-command" "flakes"];
+  nix.settings.download-buffer-size = 524288000;
   nixpkgs.config.allowUnfree = true;
   nixpkgs.config.permittedInsecurePackages = [
     "libsoup-2.74.3"

@@ -263,8 +263,7 @@ let
     drawing
   ];
 
-  # Download buffer increase
-  nix.settings.download-buffer-size = 524288000;
+ 
 
   # Centralized wallpaper path used by hyprpaper and hyprlock
   wallpaperPath = "/home/cmckerley/build/config/hosts/nix-vm/aesthetic_8_bit_art-wallpaper-3840x2160.jpg";
@@ -691,6 +690,7 @@ in
 
   # Nix settings
   nix.settings.experimental-features = ["nix-command" "flakes"];
+  nix.settings.download-buffer-size = 524288000;
   nixpkgs.config.allowUnfree = true;
   nixpkgs.config.permittedInsecurePackages = [
     "libsoup-2.74.3"
