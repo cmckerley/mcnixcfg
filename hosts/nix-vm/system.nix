@@ -156,39 +156,39 @@ let
     btrfs-snap
     pciutils
     cifs-utils
-    samba
+    # samba
     fuse
     fuse3
-    docker-compose
+    # docker-compose
   ];
 
   applications = with pkgs; [
     firefox
-    brave
-    google-chrome
+    # brave
+    # google-chrome
     slack
     telegram-desktop
     element-desktop
-    nextcloud-client
-    trayscale
+    # nextcloud-client
+    # trayscale
     alacritty
     maestral-gui
     qownnotes
     libation
-    audible-cli
+    # audible-cli
     # Additional applications from Omarchy
-    chromium
+    # chromium
     gnome-calculator
     gnome-keyring
-    signal-desktop
+    # signal-desktop
     libreoffice
-    kdePackages.kdenlive
+    # kdePackages.kdenlive
     xournalpp
     localsend
     # Note: Some packages like pinta, typora, spotify, zoom may need to be installed via other means
     # or may have different names in Nix
-    _1password-gui
-    _1password-cli
+    # _1password-gui
+    # _1password-cli
     hyprpicker
     hyprshot
     wl-clip-persist
@@ -617,12 +617,12 @@ in
         thunar-volman
       ];
     };
-    steam = {
-      enable = true;
-      gamescopeSession.enable = true;
-      remotePlay.openFirewall = true;
-      dedicatedServer.openFirewall = true;
-    };
+    #steam = {
+    #  enable = true;
+    #  gamescopeSession.enable = true;
+    #  remotePlay.openFirewall = true;
+    #  dedicatedServer.openFirewall = true;
+    #};
     # Hyprland configuration
     hyprland = {
       enable = true;
