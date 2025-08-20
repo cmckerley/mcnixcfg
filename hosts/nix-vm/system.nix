@@ -368,12 +368,12 @@ in
   # Hardware configuration
   hardware = {
     bluetooth = {
-      enable = true;
-      powerOnBoot = true;
+      enable = false;
+      powerOnBoot = false;
       # Enable experimental features (battery, LC3, etc.)
       settings = {
         General = {
-          Experimental = true;
+          Experimental = false;
         };
       };
     };
@@ -382,7 +382,7 @@ in
       enable32Bit = true;
     };
     i2c.enable = true;
-    steam-hardware.enable = true;
+    steam-hardware.enable = false;
   };
 
   # Services
@@ -692,9 +692,9 @@ in
   nix.settings.experimental-features = ["nix-command" "flakes"];
   nix.settings.download-buffer-size = 524288000;
   nixpkgs.config.allowUnfree = true;
-  nixpkgs.config.permittedInsecurePackages = [
-    "libsoup-2.74.3"
-  ];
+  #nixpkgs.config.permittedInsecurePackages = [
+  #  "libsoup-2.74.3"
+  #];
 
   # System version
   system.stateVersion = "23.11";
