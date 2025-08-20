@@ -474,22 +474,16 @@ in
   # User configuration
   users.users.cmckerley = {
     isNormalUser = true;
+    home = /home/cmckerley;
     shell = pkgs.fish;
     description = "Christopher McKerley";
     linger = true;
     extraGroups = [
       "networkmanager"
       "wheel"
-      "adbusers"
-      "libvirtd"
       "video"
-      "render"
-      "audio"
-      "docker"
       "i2c"
     ];
-    # Create Hyprland configuration directory and copy config
-    home = "/home/cmckerley";
   };
 
   # Copy Hyprland configuration to user's home
