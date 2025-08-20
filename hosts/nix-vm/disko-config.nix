@@ -17,15 +17,6 @@
                 mountOptions = [ "umask=0077" ];
               };
             };
-            swap = {
-              # name = "swap";
-              size = "8G";
-              priority = 2;
-              content = {
-                type = "swap";
-                randomEncryption = true;
-              };
-            };
             root = {
               # name = "root";
               size = "100%";
@@ -62,10 +53,14 @@
                         mountpoint = "/var/tmp";
                         mountOptions = [ "compress=zstd" "noatime" ];
                       };
-                    };
-                  };
-                };
-             };
+                      "@/swap" = {
+                        mountpoint = "/.swapvol";
+                        swap.swapfile.size = "16G";
+                      };
+              };
             };
-};
+          };
+        };
+     };
+   };
 }
