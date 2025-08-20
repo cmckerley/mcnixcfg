@@ -131,7 +131,7 @@ let
     fcitx5-gtk
     kdePackages.fcitx5-qt
     nautilus
-    sushi
+    # sushi
     # Additional Hyprland utilities from Omarchy
     # polkit_gnome  # removed to avoid duplicate agents; using KDE polkit agent
     libqalculate
